@@ -1,0 +1,10 @@
+.main {
+    @apply
+    bg-red-300
+    flex
+    flex-col
+    justify-between
+    items-center
+    md:flex-row
+    
+}
