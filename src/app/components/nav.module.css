@@ -1,14 +1,26 @@
 .navLinks {
-    background-color: yellow;
     @apply
     hidden
     md:flex
 }
-a.active {
-    background-color: blue;
+.navLinks nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding:1rem;
+    gap:2;
+}
+.navLinks nav a {
+    border-bottom: 2px solid;
     @apply
     rounded-lg
     px-2
     py-1
+    m-2
     font-semibold
+    w-full
+    text-center
 }
+.navLinks nav a.active {
+    background-color: blue;
+}  

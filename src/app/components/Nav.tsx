@@ -6,7 +6,6 @@ import styles from './nav.module.css';
 
 const Nav = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div className={styles.navLinks}>
       <nav>
