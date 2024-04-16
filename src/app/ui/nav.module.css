@@ -21,6 +21,7 @@
     w-full
     text-center
 }
-.navLinks nav a.active {
-    background-color: blue;
-}  
+.active {
+    background-color: var(--bg-light);
+    color: var(--cl-light);
+}

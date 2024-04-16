@@ -1,0 +1,7 @@
+.home {
+    background:var( --light-gray);
+    @apply
+    p-4
+    rounded-lg
+    
+}

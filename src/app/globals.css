@@ -7,3 +7,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --bg-light:#3b82f6;
+    --cl-light:#f0f9ff;
+    --dark-gray:#ddd;
+    --light-gray:#f9f9f9;
+}

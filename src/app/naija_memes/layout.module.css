@@ -1,0 +1,15 @@
+.headMain {
+    @apply
+    md:flex
+    /* gap-1 */
+}
+.header {
+    @apply
+    md:w-1/4
+}
+.children {
+    @apply
+    md:w-3/4
+    p-4
+    rounded-lg
+}

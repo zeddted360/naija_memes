@@ -13,9 +13,9 @@ export default function Landing() {
           </h1>
         </div>
         <div className={styles.linksContainer}>
-          <Link href={`/signup`}>Join</Link>
-          <Link href='/login'>login</Link>
-          <Link href='/homepage'>home</Link>
+          <Link href={`/naija_memes/signup`}>Join</Link>
+          <Link href='/naija_memes/login'>login</Link>
+          <Link href='/naija_memes/home'>home</Link>
         </div>
       </div>
       <div className={styles.landingFooter}>&copy; Naija_Memes 2024</div>

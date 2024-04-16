@@ -1,8 +1,0 @@
-.body{
-    /* background-color: red; */
-    @apply
-    rounded-lg
-    p-4
-     md:w-3/4
-     m-2
-}
