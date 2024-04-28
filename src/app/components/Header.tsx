@@ -19,6 +19,10 @@ const Header = () => {
         <hr />
         <ShowBar />
         <Nav />
+        <div className='flex flex-col gap-2 p-2'>
+          <Link href='/naija_memes/signup'>Sign Up</Link>
+          <Link href='/naija_memes/login'>Log In</Link>
+        </div>
       </div>
     </div>
   );

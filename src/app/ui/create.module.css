@@ -1,0 +1,53 @@
+.create_container {
+width: 80%;
+margin: 0 auto;
+    @apply
+    flex
+    flex-col
+    gap-2
+    rounded-lg
+    p-4
+}
+.form_container form {
+background: var(--dark-gray);
+    margin: 0 auto;
+    width:80%;
+    @apply
+    p-4
+    flex
+    flex-col
+    items-center
+    rounded-lg
+    shadow-lg
+
+}
+.form_container form div {
+    @apply
+    flex
+    justify-between
+    items-center
+    p-2
+    rounded-md
+}
+.form_container form input {
+    width: 20rem;
+    height:2.2rem;
+     @apply
+    rounded-lg
+}
+
+.form_container form textarea {
+    width: 20rem;
+    @apply
+    rounded-lg
+}
+.form_container button {
+    background-color: var(--bg-light);
+    color: var(--cl-light);
+    align-self: center;
+    text-align: center;
+    @apply
+    rounded-lg
+    px-2
+    py-2
+}

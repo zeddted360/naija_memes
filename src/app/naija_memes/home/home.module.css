@@ -3,5 +3,20 @@
     @apply
     p-4
     rounded-lg
-    
+     md:grid
+    md:grid-cols-2
+    lg:grid-cols-3
+    xl:grid-cols-4
+}
+.postList {
+    @apply
+    p-2
+    w-full
+    rounded-lg
+    m-2
+}
+.homeHead {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }

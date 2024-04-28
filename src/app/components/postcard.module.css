@@ -1,0 +1,11 @@
+.postCard {
+    background-color: #f1f1f1;
+    transition: .5s;
+    @apply
+    p-4
+    rounded-lg
+}
+.postCard:hover {
+    background-color: var(--dark-gray);
+
+}
