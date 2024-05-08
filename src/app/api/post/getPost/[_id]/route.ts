@@ -2,11 +2,12 @@ import { post } from '@/models/model';
 import { connectDB } from '@/utils/connectDB';
 import { NextRequest, NextResponse } from 'next/server';
 
-export const GET = async (req: NextRequest) => {
-  const postId = req.nextUrl.searchParams?.get('_id');
+export const GET = async (req: NextRequest, context: any) => {
+  const { params } = context;
+  const { _id } = params;
   try {
     connectDB;
-    const result = await post.findOne({ _id: postId });
+    const result = await post.findOne({ _id });
     if (!result) {
       return NextResponse.json({ message: 'Post not found' }, { status: 404 });
     }

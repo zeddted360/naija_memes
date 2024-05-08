@@ -19,6 +19,7 @@ export type LinkType = {
    content: string;
    file?: FileList[];
    authorId: IUser['_id'];
+   media?: string[];
    comments?: IComment['_id'][];
    likes?: IUser['_id'][];
    createdAt?: Date;
@@ -32,4 +33,19 @@ export type LinkType = {
    likes?: IUser['_id'];
    createdAt?: Date;
    updatedAt?: Date;
+ }
+
+ export interface IMetaData {
+   title: string;
+   description?: string;
+   keywords?: string;
+ }
+ 
+export interface IMetaTemplate {
+  title: {
+    default: string;
+    template: string;
+  };
+  description?: string;
+  keywords?: string;
  }

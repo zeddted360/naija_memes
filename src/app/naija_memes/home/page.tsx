@@ -5,6 +5,9 @@ import Link from 'next/link';
 import Loading from '@/app/components/Loading';
 import Search from '@/app/components/Search';
 import { IPost } from '@/app/types/types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+
 
 const getPosts = async (url: String) => {
   const res = await fetch(`${url}`, {
@@ -23,13 +26,27 @@ const Home = async ({ searchParams }: { searchParams: { query: String } }) => {
     : (href = 'http://localhost:3000/api/post/getPosts');
 
   const posts = await getPosts(href);
-  let words: string[] = [ posts?.words] ||[ ''];
+  let words: string[] = [posts?.words] || [''];
+  
+  
+
   return (
     <>
       <div className={styles.homeHead}>
         <h2 className='text-2xl'>Dashboard</h2>
         <Search />
-        <Link href='/naija_memes/post'>Add Post</Link>
+        <Link
+          className='flex items-center jusutify-center px-1'
+          href='/naija_memes/post'
+        >
+          {' '}
+          <FontAwesomeIcon
+            className='mr-1'
+            style={{ width: 20, height: 20 }}
+            icon={faPen}
+          />
+          <i>Post</i>
+        </Link>
       </div>
       <div className={styles.home}>
         {posts &&

@@ -33,10 +33,11 @@ const PostSChema = new Schema(
     content: {
       type: String,
     },
+    media: [String],
     authorId: {
       ref: 'user',
       type: Types.ObjectId,
-      required:true,
+      required: true,
     },
     comments: [
       {

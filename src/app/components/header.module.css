@@ -25,4 +25,8 @@
   @apply
   p-4
   rounded-lg
+  flex
+  gap-2
+  justify-start
+  items-center
 }

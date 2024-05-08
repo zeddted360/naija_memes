@@ -4,22 +4,27 @@ import Link from 'next/link';
 import Nav from '../ui/Nav';
 import Sidebar from '../ui/sidebar';
 import ShowBar from '../ui/ShowBar';
+import Image from 'next/image';
 
 const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.headerLogo}>
-        <Link
-          className={`text-2xl font-bold ${styles.siteName}`}
-          href={`/naija_memes/home`}
-        >
-          Naija Memes
+        <Link className={styles.siteName} href={`/naija_memes/home`}>
+          <Image
+            alt='memesLogo'
+            className='rounded-full'
+            width={50}
+            height={50}
+            src='/images/memesLogo.jpeg'
+          />
+          <h1 className='`text-3xl font-bold'>Naija Memes</h1>
         </Link>
         <br />
         <hr />
         <ShowBar />
         <Nav />
-        <div className='flex flex-col gap-2 p-2'>
+        <div className=' p-2 hidden md:flex flex-col gap-2 '>
           <Link href='/naija_memes/signup'>Sign Up</Link>
           <Link href='/naija_memes/login'>Log In</Link>
         </div>
