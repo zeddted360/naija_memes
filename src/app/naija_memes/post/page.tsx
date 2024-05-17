@@ -12,7 +12,6 @@ export const metadata = {
 export default function Create() {
   return (
     <div className={styles.create_container}>
-      <h2 className='text-xl text-center font-bold'>Create Meme</h2>
       <CreatePost styles={styles} />
     </div>
   );

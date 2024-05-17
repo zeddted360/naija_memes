@@ -30,19 +30,24 @@ const PostCard = async ({
   return (
     <Suspense fallback={<Loading />}>
       <div className={styles.postCard}>
-        <div className={styles.imgContainer}>
-          {media &&
+        {media?.length !=0  &&
+        <div  className={styles.mediaContainer}>
+          {
             media?.length !== 0 &&
-            media.map( async (item) => {
-              const fileType = await getImageMimeType(item)
+            media?.map( async (item) => {
+              // const fileType = await getImageMimeType(item)
               return (
-                <div key={item} className={styles.imgCont}>
-                  {fileType?.startsWith('image') ? (
+                <div key={item} className={styles?.imgCont}>
+                  <Image
+                    alt='logo'
+                    className={styles.img}
+                    src='/images/memesLogo.jpeg'fill />
+                  {/* {fileType?.startsWith('image') ? (
  <Image
-                      width={200}
-                      height={150}
-                      alt='img'
+  className={styles.img}
+                      alt='media'
                       src={item}
+                      fil
                     />
                    
                   ) : (
@@ -50,13 +55,15 @@ const PostCard = async ({
                       src={item}
                       controls
                     />
-                  )}
+                  )} */}
                 </div>
               );
-            })
-          }
+            })}
         </div>
-        <h3
+
+          }
+        <div className={styles?.detailsPage}>
+<h3
           className='text-lg mb-2 font-bold'
           dangerouslySetInnerHTML={{ __html: markWords(title) }}
         />
@@ -66,6 +73,7 @@ const PostCard = async ({
             __html: markWords(content?.slice(0, 20) + '...'),
           }}
         />
+        </div>
       </div>
     </Suspense>
   );

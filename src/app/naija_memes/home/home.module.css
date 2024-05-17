@@ -1,5 +1,6 @@
 .home {
     background:var( --light-gray);
+    width: 100%;
     @apply
     p-4
     rounded-lg
@@ -7,6 +8,7 @@
     md:grid-cols-2
     lg:grid-cols-3
     xl:grid-cols-4
+   
 }
 .postList {
     @apply
@@ -14,6 +16,7 @@
     w-full
     rounded-lg
     m-2
+   
 }
 .homeHead {
     display:flex;

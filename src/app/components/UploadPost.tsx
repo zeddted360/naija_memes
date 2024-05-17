@@ -19,19 +19,19 @@ const UploadPost = ({
     }));
   };
   return (
-    <div className='flex flex-col'>
+    <div>
       <div>
         <input
           name='title'
           type='text'
-          placeholder='Title'
+          placeholder=' Title'
           onChange={handleChange}
         />
       </div>
       <div>
         <textarea
-          rows={10}
           cols={30}
+          rows={10}
           name='content'
           placeholder='Content'
           onChange={handleChange}
