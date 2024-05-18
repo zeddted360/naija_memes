@@ -23,6 +23,13 @@ export default function CreatePost({ styles }: { styles: any }) {
   const [startTime, setStartTime] = useState<number>(0);
   const [endTime, setEndTime] = useState<number>(0);
 
+  const validateInput: () => boolean = () => {
+    if((!post.title || !post.content)){
+      return true
+    }
+    return false;
+  }
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
@@ -54,7 +61,7 @@ export default function CreatePost({ styles }: { styles: any }) {
       setEndTime(performance.now());
       setLoading(false); 
       form.reset();
-      // router.push('/naija_memes/home');
+      router.push('/naija_memes/home');
     } catch (error: any) {
       setLoading(false);
       console.error(error.message);
@@ -68,7 +75,7 @@ export default function CreatePost({ styles }: { styles: any }) {
       <form  onSubmit={handleSubmit}>
         <UploadPost post={post} setPost={setPost} />
         <UploadFile selectedFiles={selectedFiles} setSelectedFiles={setSelectedFiles} />
-        <button>{loading ? 'Uploading...' : 'Upload'}</button>
+        <button disabled={validateInput()} className={validateInput() ? styles.disabled : styles.nonDisabled}>{loading ? 'Uploading...' : 'Upload'}</button>
       </form>
     </div>
   );

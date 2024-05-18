@@ -5,6 +5,7 @@
     border: 2px solid var(--bg-light);
     @apply
     rounded-lg
+    m-1
 }
 .searchInput::placeholder {
     text-indent: 5px;

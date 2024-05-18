@@ -9,8 +9,6 @@ interface IWord extends IPost {
   words: string[];
 }
 
-
-
 const PostCard = async ({
   _id,
   title,
@@ -26,22 +24,22 @@ const PostCard = async ({
       (match) => `<mark class='rounded-md'>${match}</mark>`
     );
   };
-
+  if (!(title && media)) return <Loading/>
   return (
-    <Suspense fallback={<Loading />}>
-      <div className={styles.postCard}>
-        {media?.length !=0  &&
-        <div  className={styles.mediaContainer}>
-          {
-            media?.length !== 0 &&
-            media?.map( async (item) => {
+    <div className={styles.postCard}>
+      {media?.length != 0 && (
+        <div className={styles.mediaContainer}>
+          {media?.length !== 0 &&
+            media?.map(async (item) => {
               // const fileType = await getImageMimeType(item)
               return (
                 <div key={item} className={styles?.imgCont}>
                   <Image
                     alt='logo'
                     className={styles.img}
-                    src='/images/memesLogo.jpeg'fill />
+                    src='/images/memesLogo.jpeg'
+                    fill
+                  />
                   {/* {fileType?.startsWith('image') ? (
  <Image
   className={styles.img}
@@ -60,22 +58,22 @@ const PostCard = async ({
               );
             })}
         </div>
-
-          }
-        <div className={styles?.detailsPage}>
-<h3
+      )}
+      <div className={styles?.detailsPage}>
+        <h3
           className='text-lg mb-2 font-bold'
-          dangerouslySetInnerHTML={{ __html: markWords(title) }}
+          dangerouslySetInnerHTML={{
+            __html: markWords(title.slice(0, 50) + '...'),
+          }}
         />
         <p
           className='p-2'
           dangerouslySetInnerHTML={{
-            __html: markWords(content?.slice(0, 20) + '...'),
+            __html: markWords(content?.slice(0, 50) + '...'),
           }}
         />
-        </div>
       </div>
-    </Suspense>
+    </div>
   );
 };
 

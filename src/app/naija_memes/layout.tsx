@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div >
       <div className={styles.headMain}>
         <div className={styles.header}>
           <Header />

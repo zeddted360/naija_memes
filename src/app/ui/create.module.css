@@ -51,7 +51,7 @@ width: 100%;
     text-indent: 5px;
 }
 
-.create_container form  button {
+ .nonDisabled {
     background-color: var(--bg-light);
     color: var(--cl-light);
     align-self: center;
@@ -63,3 +63,15 @@ width: 100%;
     px-2
     py-2
 } 
+.disabled {
+ background-color: #f1f1f1;
+    color: var(--dark-gray);
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    font-size: bold;
+    @apply
+    rounded-lg
+    px-2
+    py-2
+}

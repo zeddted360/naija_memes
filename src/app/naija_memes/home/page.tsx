@@ -34,9 +34,9 @@ const Home = async ({ searchParams }: { searchParams: { query: String } }) => {
   
 
   return (
-    <>
+    <div  className={styles.MainHome}>
       <div className={styles.homeHead}>
-        <h2 className='text-2xl'>Dashboard</h2>
+        <h2 className='text-xl'>Dashboard</h2>
         <Search />
         <Link
           className='flex items-center jusutify-center px-1'
@@ -64,7 +64,7 @@ const Home = async ({ searchParams }: { searchParams: { query: String } }) => {
             </Suspense>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 
